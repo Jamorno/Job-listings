@@ -1,0 +1,247 @@
+@import "tailwindcss";
+
+:root {
+  --background: #effafa;
+  --primary: #5ba4a4;
+  --gray400: #7b8e8e;
+  --green900: #2c3a3a;
+}
+
+body {
+  margin: 0px 20px;
+  background: var(--background);
+}
+
+@media (min-width: 1439px) {
+  body {
+    margin: 0px 120px;
+  }
+}
+
+/* top background ==================================================================================== */
+.top-background {
+  background-image: url("/images/bg-header-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--primary);
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+@media (min-width: 1439px) {
+  .top-background {
+    background-image: url("/images/bg-header-desktop.svg");
+  }
+}
+
+/* filter bar ======================================================================================== */
+.filter-bar-container {
+  position: absolute;
+  top: 120px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: calc(100% - 40px);
+  max-width: 1200px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  z-index: 1;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.filter-tags {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.filter-tags-name {
+  font-weight: bold;
+  padding: 5px 10px;
+  color: var(--primary);
+  background-color: var(--background);
+}
+
+.filter-tags-close {
+  font-weight: bold;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+  background-color: var(--primary);
+}
+
+.filter-tags-close:hover {
+  transition: 0.4s;
+  background-color: var(--green900);
+}
+
+.clear-button {
+  font-weight: bold;
+  color: var(--gray400);
+  cursor: pointer;
+}
+
+.clear-button:hover {
+  transition: 0.4s;
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* job card ========================================================================================== */
+.job-card-wrapper {
+  margin-top: 200px;
+}
+
+.job-card-wrapper.has-filter {
+  margin-top: 230px;
+}
+
+.job-container {
+  margin-bottom: 40px;
+  border-radius: 6px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.job-feature-border {
+  border-left: 5px solid var(--primary)
+}
+
+.jobs-card {
+  position: relative;
+  padding: 20px;
+  padding-top: 35px;
+}
+
+.job-logo {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: -25px;
+}
+
+.jobs-card-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+
+.company-name {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.tag-new {
+  font-weight: bold;
+  padding: 1px 10px;
+  border-radius: 30px;
+  color: white;
+  background-color: var(--primary);
+}
+
+.tag-featured {
+  font-weight: bold;
+  padding: 1px 10px;
+  border-radius: 30px;
+  color: white;
+  background-color: var(--green900);
+}
+
+.position {
+  color: var(--green900);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.position:hover {
+  transition: 0.4s;
+  color: var(--primary);
+}
+
+.job-details {
+  color: var(--gray400);
+}
+
+.job-detail-underline {
+  color: var(--gray400);
+  font-size: 14px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--gray400);
+  padding-bottom: 10px;
+}
+
+.tag-tool-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag-tool {
+  font-weight: bold;
+  color: var(--primary);
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--background);
+}
+
+.tag-tool:hover {
+  transition: 0.4s;
+  color: white;
+  background-color: var(--primary);
+}
+
+@media (min-width: 1439px) {
+  .job-container {
+    margin-bottom: 20px;
+  }
+
+  .jobs-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .job-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .job-logo {
+    position: static;
+    width: 80px;
+    height: 80px;
+  }
+
+  .jobs-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .job-detail-underline {
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+  }
+}
